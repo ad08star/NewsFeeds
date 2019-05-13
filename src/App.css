@@ -31,3 +31,100 @@
     transform: rotate(360deg);
   }
 }
+
+.contentBlock {
+  height: 125px;
+  background-color: #e4dfda;
+  border-radius: 1vw;
+  margin: 2vw;
+  border: 2px solid #d4b483;
+  text-align: center;
+}
+
+.contentHeading {
+  color: #c1666b;
+  font-weight: 800;
+  padding-top: 1vw;
+}
+
+#modalImage {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.roundInput {
+  outline: "none";
+  border-radius: "10px";
+  padding: "0px 10px";
+}
+
+#link-tag > p:hover {
+  background: #c1666b;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#link-tag > p {
+  padding: 1vw 5vw;
+  transition-timing-function: ease-in;
+  transition-duration: 0.3s;
+}
+
+.searchForm > input[type="text"] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("https://www.w3schools.com/howto/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 6px 20px 6px 40px;
+  margin-top: 7px;
+  -webkit-transition: width 0.4s ease-in;
+  transition: width 0.4s ease-in;
+  border: none;
+}
+.searchForm > input[type="text"]:focus {
+  width: 250px;
+  border-radius: 4px 0px 0px 4px;
+  outline: none;
+}
+.searchForm > input[type="button"] {
+  display: none;
+  box-sizing: border-box;
+  border-radius: 0px 4px 4px 0px;
+  font-size: 16px;
+  padding: 6px 20px 6px 20px;
+  margin-top: 7px;
+  border: none;
+}
+.formInput:focus + .formButton {
+  display: inline-block;
+}
+
+.searchForm {
+  float: right;
+}
+.navInput {
+  border-radius: 4px 0px 0px 4px;
+  font-size: 16px;
+  margin-top: 7px;
+  border: none;
+  background-image: url("https://www.w3schools.com/howto/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 6px 6px 6px 40px;
+  outline: none;
+}
+.navOutput {
+  border-radius: 0px 4px 4px 0px;
+  font-size: 16px;
+  padding: 6px 20px 6px 20px;
+  margin-top: 7px;
+  border: none;
+  outline: none;
+}
