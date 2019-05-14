@@ -192,6 +192,7 @@ class App extends Component {
           <Pagination
             activePage={this.props.currentPage}
             itemsCountPerPage={10}
+            // limiting pagecount to 2000 as hight page count is not suppoted by api and cause error
             totalItemsCount={
               this.props.total > 20000 ? 20000 : this.props.total
             }
