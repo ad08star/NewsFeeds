@@ -8,7 +8,7 @@ export const fetchNews = id => {
   return dispatch => {
     axios
       .get(
-        "http://content.guardianapis.com/search?api-key=6af7a235-d5f0-4243-8490-864073b78638&q=" +
+        "https://content.guardianapis.com/search?api-key=6af7a235-d5f0-4243-8490-864073b78638&q=" +
           id +
           "&show-fields=thumbnail,headline&show-tags=keyword&page=1&page-size=10"
       )
@@ -26,7 +26,7 @@ export const fetchNextPageNews = (pageNumber, id) => {
   return dispatch => {
     axios
       .get(
-        "http://content.guardianapis.com/search?api-key=6af7a235-d5f0-4243-8490-864073b78638&q=" +
+        "https://content.guardianapis.com/search?api-key=6af7a235-d5f0-4243-8490-864073b78638&q=" +
           id +
           "&show-fields=thumbnail,headline&show-tags=keyword&page=" +
           pageNumber +
