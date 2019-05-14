@@ -36,7 +36,7 @@ export default class HeaderNavbar extends Component {
               <a
                 className="navbar-brand"
                 style={{ color: "#e4dfda", fontWeight: "bold" }}
-                href="/#"
+                href="/newsfeeds"
                 onClick={() => {
                   window.location.reload();
                 }}
@@ -45,7 +45,7 @@ export default class HeaderNavbar extends Component {
               </a>
             </div>
             <a
-              href="/#"
+              href="/newsfeeds"
               className="nav navbar-nav navbar-right"
               onClick={this.handleShow}
               style={{ cursor: "pointer" }}
