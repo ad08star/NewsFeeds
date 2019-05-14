@@ -19,12 +19,14 @@ class App extends Component {
   render() {
     var newsDivs = [];
     var newsList = [...this.props.newList];
-    console.log("newsList:", newsList);
+    // console.log("newsList:", newsList);
     if (newsList.length > 0) {
       newsDivs.push(
-        <h4 key="0">
-          Results for search <em>"{this.props.searchKey}"</em>
-        </h4>
+        <div key="0">
+          <h4 style={{ color: "#c1666b" }}>
+            Results for search <em>"{this.props.searchKey}"</em>
+          </h4>
+        </div>
       );
       newsList.forEach(x => {
         var keywordDivs = [];
@@ -32,9 +34,9 @@ class App extends Component {
         keywordList.forEach(k => {
           keywordDivs.push(
             <div
+              className="keyword"
               key={k.id}
               onClick={e => this.props.fetchNextPageNews(1, k.webTitle)}
-              style={{ cursor: "pointer" }}
             >
               {k.webTitle}
             </div>
@@ -42,34 +44,56 @@ class App extends Component {
         });
         newsDivs.push(
           <div
+            className="col-md-12 col-sm-12 col-lg-12 col-xs-12"
             key={x.id}
             style={{
               border: "2px solid #c1666b",
               margin: "5px",
-              borderRadius: "10px"
+              borderRadius: "10px",
+              background: "white"
             }}
           >
-            <span>
+            <div className="col-md-4 col-sm-4 col-lg-4 col-xs-4">
               <a href={x.webUrl} target="_blank" rel="noopener noreferrer">
                 <img
                   src={x.fields.thumbnail != null ? x.fields.thumbnail : logo}
                   height="100%"
-                  width="20%"
+                  width="80%"
                   alt="Thumbnail"
-                />
+                  style={{
+                    margin: "10px",
+                    borderRadius: "5px",
+                    border: "1px solid #c1666b"
+                  }}
+                />{" "}
+              </a>
+            </div>
+            <div className="col-md-8 col-sm-8 col-lg-8 col-xs-8">
+              <a href={x.webUrl} target="_blank" rel="noopener noreferrer">
                 <h4>{x.fields.headline}</h4>
               </a>
-            </span>
-            <div
-              style={
-                keywordDivs.length > 0
-                  ? { display: "block" }
-                  : { display: "none" }
-              }
-            >
-              <h5>Related Topics:</h5>
-              <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-                {keywordDivs}
+
+              <div
+                style={
+                  keywordDivs.length > 0
+                    ? { display: "block" }
+                    : { display: "none" }
+                }
+              >
+                <br />
+                <h5>
+                  <u>Related Topics:</u>
+                </h5>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    alignContent: "flex-end",
+                    flexWrap: "wrap"
+                  }}
+                >
+                  {keywordDivs}
+                </div>
               </div>
             </div>
           </div>
@@ -78,7 +102,7 @@ class App extends Component {
       });
     } else if (this.props.searchKey !== "") {
       newsDivs.push(
-        <h4>
+        <h4 style={{ color: "#c1666b" }}>
           No results for search <em>"{this.props.searchKey}"</em>
         </h4>
       );
@@ -139,10 +163,13 @@ class App extends Component {
           </div>
         </div>
         <div
+          className="col-md-12 col-sm-12 col-lg-12 col-xs-12"
           style={{
             border: "2px solid #c1666b",
-            margin: "10px",
-            borderRadius: "20px"
+            borderRadius: "20px",
+            margin: "1%",
+            width: "98%",
+            background: "#f7eedc"
           }}
         >
           {newsDivs}
@@ -185,7 +212,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispachToProps = dispatch => {
-  console.log("searchStr", searchStr);
+  //console.log("searchStr", searchStr);
   return {
     fetchNews: event => {
       event.preventDefault();

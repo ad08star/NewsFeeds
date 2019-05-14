@@ -72,38 +72,19 @@
   transition-duration: 0.3s;
 }
 
-.searchForm > input[type="text"] {
-  width: 130px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url("https://www.w3schools.com/howto/searchicon.png");
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 6px 20px 6px 40px;
-  margin-top: 7px;
-  -webkit-transition: width 0.4s ease-in;
-  transition: width 0.4s ease-in;
-  border: none;
+.keyword {
+  background: #e4dfda;
+  cursor: pointer;
+  border: 1px solid #c1666b;
+  padding: 3px 5px;
+  margin: 5px 0px;
+  border-radius: 5px;
 }
-.searchForm > input[type="text"]:focus {
-  width: 250px;
-  border-radius: 4px 0px 0px 4px;
-  outline: none;
-}
-.searchForm > input[type="button"] {
-  display: none;
-  box-sizing: border-box;
-  border-radius: 0px 4px 4px 0px;
-  font-size: 16px;
-  padding: 6px 20px 6px 20px;
-  margin-top: 7px;
-  border: none;
-}
-.formInput:focus + .formButton {
-  display: inline-block;
+
+.keyword:hover {
+  background: #c1666b;
+  color: white;
+  cursor: pointer;
 }
 
 .searchForm {

@@ -37,9 +37,11 @@ export default class HeaderNavbar extends Component {
                 className="navbar-brand"
                 style={{ color: "#e4dfda", fontWeight: "bold" }}
                 href="/#"
-                onClick={() => window.location.reload()}
+                onClick={() => {
+                  window.location.reload();
+                }}
               >
-                <i class="fas fa-globe" /> {this.props.pagetitle}
+                <i className="fas fa-globe" /> {this.props.pagetitle}
               </a>
             </div>
             <a
@@ -55,20 +57,6 @@ export default class HeaderNavbar extends Component {
             </a>
             <form>
               <div className="searchForm">
-                {/* <input
-                  className="formInput"
-                  type="text"
-                  name="search"
-                  placeholder="Search.."
-                  onChange={this.handleChange}
-                />
-                <input
-                  className="formButton"
-                  type="button"
-                  value="Search"
-                  onClick={() => console.log(this.searchKey)}
-                /> */}
-
                 <div
                   style={
                     !this.props.show
@@ -80,12 +68,20 @@ export default class HeaderNavbar extends Component {
                     className="navInput"
                     onChange={this.handleChange}
                     placeholder="New Search"
+                    onKeyUp={e => {
+                      e.preventDefault();
+                      if (e.keyCode === 13) {
+                        let x = document.getElementsByClassName("navOutput");
+                        x[0].click();
+                      }
+                    }}
                   />
                   <button
                     className="navOutput"
-                    onClick={e =>
-                      this.props.fetchNextPageNews(1, this.searchKey)
-                    }
+                    onClick={e => {
+                      e.preventDefault();
+                      this.props.fetchNextPageNews(1, this.searchKey);
+                    }}
                   >
                     Search
                   </button>
@@ -104,7 +100,7 @@ export default class HeaderNavbar extends Component {
             closeButton
             style={{ backgroundColor: "#c1666b", color: "white" }}
           >
-            <Modal.Title>NOT SO IMPORTANT DISCLAIMER</Modal.Title>
+            <Modal.Title>NEWSFEEDS DISCLAIMER</Modal.Title>
           </Modal.Header>
           <Modal.Body
             style={{
@@ -114,14 +110,35 @@ export default class HeaderNavbar extends Component {
               color: "#4e4a4a"
             }}
           >
-            <div>Something</div>
+            <div>
+              <i className="fas fa-globe" style={{ fontSize: "50px" }} />
+              <div>NewsFeeds</div>
+            </div>
             <br />
             <p>
-              HAPPY MONKEYS is <em>NOT</em> a registered Trademark. <br />
-              So feel free to use it as you see fit.
+              NewsFeeds id powered by <em>The Guardian - Open Platform</em>.
+              <br />
+              This app is for learning purpose only and code is available in{" "}
+              <a
+                href="https://github.com/ad08star/NewsFeeds"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GITHUB.
+              </a>
             </p>
             <p style={{ color: "#c1666b" }}>
-              <em>PS: This is just an example of MODAL WINDOW.</em>
+              <em>
+                {" "}
+                PS: Checkout my other hobby project{" "}
+                <a
+                  href="https://ad08star.github.io/React_Multipurpose/#/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  here <i className="fas fa-external-link-alt" />.
+                </a>
+              </em>
             </p>
           </Modal.Body>
           <Modal.Footer
