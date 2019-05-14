@@ -37,6 +37,7 @@ export default class HeaderNavbar extends Component {
                 className="navbar-brand"
                 style={{ color: "#e4dfda", fontWeight: "bold" }}
                 href="/newsfeeds"
+                // uncomment below code for local testing
                 // onClick={() => {
                 //   window.location.reload();
                 // }}
@@ -54,6 +55,7 @@ export default class HeaderNavbar extends Component {
                 style={{ color: "#e4dfda", marginLeft: "5px" }}
               />
             </a>
+            {/* Navbar search form */}
             <form>
               <div className="searchForm">
                 <div
@@ -115,7 +117,7 @@ export default class HeaderNavbar extends Component {
             </div>
             <br />
             <p>
-              NewsFeeds id powered by <em>The Guardian - Open Platform</em>.
+              NewsFeeds is powered by <em>The Guardian - Open Platform</em>.
               <br />
               This app is for learning purpose only and code is available in{" "}
               <a
@@ -143,6 +145,7 @@ export default class HeaderNavbar extends Component {
           <Modal.Footer
             style={{ backgroundColor: "#c1666b", padding: "8px 15px" }}
           >
+            {/* Note to self: convet this below style into css class */}
             <button
               type="button"
               className="btn btn-default"

@@ -4,6 +4,7 @@ export const fetchNewsAsync = data => {
   return { type: "FETCH_NEWS", value: data };
 };
 
+// initial api call for first ten newsfeeds using search
 export const fetchNews = id => {
   return dispatch => {
     axios
@@ -21,6 +22,8 @@ export const fetchNews = id => {
       .catch(error => console.log(error.response));
   };
 };
+
+// note to self: Entire app can be run using this api call only just like one reducer action :P
 
 export const fetchNextPageNews = (pageNumber, id) => {
   return dispatch => {

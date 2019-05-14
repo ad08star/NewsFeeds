@@ -17,6 +17,7 @@ class App extends Component {
     console.log(pageNumber);
   }
   render() {
+    // Assigning featched newsfeeds as divs to an array
     var newsDivs = [];
     var newsList = [...this.props.newList];
     // console.log("newsList:", newsList);
@@ -72,7 +73,7 @@ class App extends Component {
               <a href={x.webUrl} target="_blank" rel="noopener noreferrer">
                 <h4>{x.fields.headline}</h4>
               </a>
-
+              {/* setting keyword AKA releated Topics */}
               <div
                 style={
                   keywordDivs.length > 0
@@ -109,6 +110,7 @@ class App extends Component {
     }
     return (
       <div className="App">
+        {/* calling header component and passing props and function */}
         <HeaderNavbar
           pagetitle={"NewsFeeds"}
           fetchNextPageNews={this.props.fetchNextPageNews}
@@ -120,6 +122,7 @@ class App extends Component {
             this.props.showSearch ? { display: "block" } : { display: "none" }
           }
         >
+          {/* Main search form */}
           <Form>
             <input
               className="navInput"
@@ -141,6 +144,9 @@ class App extends Component {
             </button>
           </Form>
           <br />
+
+          {/* Suggested topics. Can be converted as independent component */}
+
           <div
             id="link-tag"
             style={{ display: "flex", justifyContent: "space-evenly" }}
@@ -162,6 +168,8 @@ class App extends Component {
             </p>
           </div>
         </div>
+
+        {/* Showing news stories */}
         <div
           className="col-md-12 col-sm-12 col-lg-12 col-xs-12"
           style={{
