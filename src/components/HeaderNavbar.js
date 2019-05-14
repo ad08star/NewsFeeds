@@ -37,9 +37,9 @@ export default class HeaderNavbar extends Component {
                 className="navbar-brand"
                 style={{ color: "#e4dfda", fontWeight: "bold" }}
                 href="/newsfeeds"
-                onClick={() => {
-                  window.location.reload();
-                }}
+                // onClick={() => {
+                //   window.location.reload();
+                // }}
               >
                 <i className="fas fa-globe" /> {this.props.pagetitle}
               </a>
