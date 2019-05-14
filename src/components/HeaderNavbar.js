@@ -45,7 +45,6 @@ export default class HeaderNavbar extends Component {
               </a>
             </div>
             <a
-              href="/newsfeeds"
               className="nav navbar-nav navbar-right"
               onClick={this.handleShow}
               style={{ cursor: "pointer" }}
